@@ -1,0 +1,60 @@
+Write the final structured investigation synthesis based only on the provided material.
+
+Subjects:
+{{subjects_json}}
+
+Evidence batch summaries:
+{{batch_summaries_json}}
+
+Deterministic investigation leads:
+{{leads_json}}
+
+Derived risk signals:
+{{risk_signals_json}}
+
+Return JSON in this exact shape:
+{
+  "executive_summary": "...",
+  "top_3_selected_attack_vectors": [
+    {
+      "id": "av_1",
+      "title": "...",
+      "summary": "...",
+      "type": "social_engineering",
+      "confidence": "high",
+      "target_subject_ids": ["subj_1"],
+      "evidence_refs": ["ev1", "ev2"],
+      "grounded_facts": [
+        "..."
+      ],
+      "concrete_pretexts": [
+        "..."
+      ],
+      "defensive_actions": [
+        "..."
+      ],
+      "why_it_matters": "...",
+      "why_selected": "..."
+    }
+  ],
+  "rationale": "...",
+  "recommended_next_steps": [
+    "..."
+  ]
+}
+
+Requirements:
+- Use only the provided inputs
+- Do not invent evidence
+- Executive summary must mention the most important concrete findings, not counts
+- Use the deterministic leads as the primary candidates
+- Preserve concrete names, events, products, organizations, and locations when present
+- Every attack vector must be practical and specific enough to be actioned by a security team
+- grounded_facts must be evidence-based facts, not interpretations
+- concrete_pretexts must be plausible example approaches grounded in the facts
+- defensive_actions must be specific defensive actions a security team can take
+- why_it_matters must explain the security significance
+- why_selected must explain why this vector was prioritized over other options
+- Keep exactly up to 3 attack vectors
+- Attack vectors are hypotheses, not confirmed vulnerabilities
+- Do not return markdown

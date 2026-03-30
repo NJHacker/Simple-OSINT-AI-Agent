@@ -1,0 +1,46 @@
+Build a short initial passive OSINT investigation plan for the following normalized subjects.
+
+Subjects:
+{{subjects_json}}
+
+Supported tools for this POC:
+- search_web
+- search_news
+- dns_lookup
+- whois_lookup
+- fetch_website
+- fetch_robots_txt
+- fetch_security_txt
+- fetch_tls_certificate
+
+Return JSON in this exact shape:
+{
+  "summary": "...",
+  "goals": [
+    {
+      "subject_id": "subj_1",
+      "priority": 1,
+      "goal": "..."
+    }
+  ],
+  "initial_actions": [
+    "search_web on subj_1",
+    "whois_lookup on subj_2"
+  ],
+  "notes": [
+    "..."
+  ]
+}
+
+Requirements:
+- Summary: maximum 2 short sentences
+- One goal per subject, maximum 3 goals total
+- Each goal must be one short sentence
+- initial_actions: maximum 6 items
+- initial_actions must use only the supported tools listed above
+- notes: maximum 3 short items
+- Keep everything concise
+- Do not mention tools or services that are not implemented in this POC
+- Do not claim vulnerabilities
+- Passive collection only
+- Do not return markdown

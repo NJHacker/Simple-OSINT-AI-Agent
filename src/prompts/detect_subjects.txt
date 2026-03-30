@@ -1,0 +1,26 @@
+Classify and normalize the following investigation subjects.
+
+Input:
+{{subjects_json}}
+
+Return JSON in this exact shape:
+{
+  "subjects": [
+    {
+      "id": "subj_1",
+      "original_value": "Fireblocks",
+      "detected_type": "company",
+      "normalized_value": "Fireblocks",
+      "confidence": "high",
+      "reason": "..."
+    }
+  ]
+}
+
+Requirements:
+- Use only: person, company, domain
+- Create stable ids in the form subj_1, subj_2, ...
+- Keep one output subject for each input subject
+- If an input type exists, verify it rather than blindly trusting it
+- Normalize domains to lowercase
+- Do not return markdown

@@ -1,0 +1,30 @@
+Generate investigation leads from the provided compact evidence.
+
+Compact state:
+{{state_json}}
+
+Return JSON in this exact shape:
+{
+  "leads": [
+    {
+      "id": "lead_1",
+      "title": "...",
+      "subject_ids": ["subj_1"],
+      "lead_type": "social_engineering",
+      "summary": "...",
+      "evidence_refs": ["ev1", "ev4"],
+      "confidence": "high",
+      "suggested_follow_up_queries": [
+        "..."
+      ],
+      "possible_pretext": "..."
+    }
+  ]
+}
+
+Requirements:
+- Return at most 5 leads
+- Every lead must be grounded in provided evidence only
+- A lead is an actionable investigative direction, not a confirmed vulnerability
+- Focus on realistic attack opportunities, pretexts, trust relationships, third-party dependencies, public exposure, or executive targeting angles
+- Do not return markdown

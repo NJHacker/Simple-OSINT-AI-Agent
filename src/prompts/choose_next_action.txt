@@ -1,0 +1,40 @@
+Choose the next best action for the current investigation state.
+
+Investigation state:
+{{state_json}}
+
+Investigation plan:
+{{plan_json}}
+
+Supported actions:
+- search_web
+- search_news
+- dns_lookup
+- whois_lookup
+- fetch_website
+- fetch_robots_txt
+- fetch_security_txt
+- fetch_tls_certificate
+- generate_attack_hypotheses
+- finalize_report
+
+Return JSON in this exact shape:
+{
+  "action": "search_web",
+  "subject_id": "subj_1",
+  "reason": "...",
+  "query": "...",
+  "expected_output": "..."
+}
+
+Requirements:
+- Return only one action
+- Use only the supported actions above
+- Use subject_id when the action applies to a specific subject
+- For dns_lookup, whois_lookup, fetch_robots_txt, fetch_security_txt, fetch_tls_certificate use only domain subjects
+- fetch_website may be used for company or domain subjects
+- Prefer actions that add new evidence rather than repeating the same source
+- If enough evidence exists, choose generate_attack_hypotheses or finalize_report
+- query may be null for non-search actions
+- Do not return markdown
+- If no domain subject exists in the investigation state, do not select dns_lookup, whois_lookup, fetch_website, fetch_robots_txt, fetch_security_txt, or fetch_tls_certificate for a company subject.

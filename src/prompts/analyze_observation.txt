@@ -1,0 +1,32 @@
+Analyze the following tool result and extract practical observations.
+
+Decision:
+{{decision_json}}
+
+Tool result:
+{{tool_result_json}}
+
+Return JSON in this exact shape:
+{
+  "description": "...",
+  "extracted_observations": [
+    {
+      "observation": "...",
+      "confidence": "high",
+      "relevance": "..."
+    }
+  ],
+  "reliability_note": "..."
+}
+
+Requirements:
+- Return at most 3 observations
+- Each observation must be short but specific
+- Preserve concrete proper nouns, named products, named vendors, named events, dates, locations, and organizations when they appear in the tool result
+- Each relevance field must explain the security meaning of the observation in one short sentence
+- Only extract observations supported by the tool result
+- Summarize vendor or service usage instead of copying raw tokens
+- Never include verification tokens, secrets, hashes, or long TXT values verbatim
+- If the tool returned no results, state that clearly and return an empty extracted_observations list
+- Do not claim confirmed vulnerabilities
+- Do not return markdown

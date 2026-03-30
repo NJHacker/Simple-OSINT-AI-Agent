@@ -1,0 +1,43 @@
+Summarize this evidence batch for later final-report synthesis.
+
+Batch ID:
+{{batch_id}}
+
+Evidence batch:
+{{batch_json}}
+
+Return plain text in this exact tagged format:
+
+BATCH_ID: <value>
+EVIDENCE_REFS: ev1, ev2
+
+FACTUAL_SUMMARY:
+- ...
+- ...
+
+SECURITY_IMPLICATIONS:
+- ...
+- ...
+
+NOTABLE_ENTITIES:
+- ...
+- ...
+
+SOURCE_QUALITY_NOTES:
+- ...
+- ...
+
+Requirements:
+- Use only the provided evidence
+- factual_summary: at most 6 concise facts
+- security_implications: at most 4 concise implications
+- notable_entities: at most 8 concrete proper nouns, products, vendors, events, places, or organizations that appear in the evidence
+- source_quality_notes: at most 3 concise notes
+- Preserve concrete names where present
+- Do not claim confirmed vulnerabilities
+- Do not return JSON
+- Do not return markdown code fences
+- factual_summary: at most 4 concise facts
+- security_implications: at most 3 concise implications
+- notable_entities: at most 6 items
+- source_quality_notes: at most 2 concise notes

@@ -1,0 +1,47 @@
+Write a concise executive summary for the investigation.
+
+Subjects:
+{{subjects_json}}
+
+Selected attack vectors:
+{{attack_vectors_json}}
+
+Risk signals:
+{{risk_signals_json}}
+
+Return JSON in this exact shape:
+{
+  "executive_summary": "..."
+}
+
+Requirements:
+- Use only the provided inputs
+- Do not mention counts like number of evidence items or number of leads
+- Mention the most concrete and actionable findings
+- Prefer specific named providers, products, events, roles, or workflows when present
+- Avoid generic wording like "public profile" unless you immediately ground it with specifics
+- Keep it to 3-5 sentences
+- Do not return markdownWrite a concise executive summary for the investigation.
+
+Subjects:
+{{subjects_json}}
+
+Selected attack vectors:
+{{attack_vectors_json}}
+
+Risk signals:
+{{risk_signals_json}}
+
+Return JSON in this exact shape:
+{
+  "executive_summary": "..."
+}
+
+Requirements:
+- Use only the provided inputs
+- Do not mention counts like number of evidence items or number of leads
+- Mention the most concrete and actionable findings
+- Prefer specific named providers, products, events, roles, or workflows when present
+- Avoid generic wording like "public profile" unless you immediately ground it with specifics
+- Keep it to 3-5 sentences
+- Do not return markdown

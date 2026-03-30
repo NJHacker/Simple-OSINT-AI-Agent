@@ -1,0 +1,9 @@
+anthropic
+python-dotenv
+pydantic>=2,<3
+dnspython
+python-whois
+rich
+ddgs
+requests
+beautifulsoup4

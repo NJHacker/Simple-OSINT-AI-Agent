@@ -1,0 +1,62 @@
+Refine a single attack vector from a deterministic lead and supporting evidence summaries.
+
+Lead:
+{{lead_json}}
+
+Relevant batch summaries:
+{{batch_summaries_json}}
+
+Risk signals:
+{{risk_signals_json}}
+
+Return plain text in this exact tagged format:
+
+TITLE: <value>
+SUMMARY: <value>
+TYPE: <value>
+CONFIDENCE: <value>
+TARGET_SUBJECT_IDS: subj_1, subj_2
+EVIDENCE_REFS: ev1, ev2
+
+GROUNDED_FACTS:
+- ...
+- ...
+
+CONCRETE_PRETEXTS:
+- ...
+- ...
+
+DEFENSIVE_ACTIONS:
+- ...
+- ...
+
+WHY_IT_MATTERS:
+<value>
+
+WHY_SELECTED:
+<value>
+
+Requirements:
+- Use only the provided lead, relevant batch summaries, and risk signals
+- Do not invent evidence
+- Keep the vector practical and specific
+- Use the operator_hint from the lead as guidance, but do not copy it verbatim
+- Distinguish clearly between:
+  - targeting the company through believable provider-themed social engineering
+  - and compromising the provider itself
+- Do not imply that compromise of major providers like AWS or GoDaddy is a likely attack path unless the evidence directly supports that conclusion
+- For registrar/DNS/provider findings, focus on scenarios such as:
+  - phishing or impersonation of provider support
+  - deception of the company's admins responsible for registrar/DNS/cloud changes
+  - abuse of change-approval workflows
+- grounded_facts must stay concise and concrete
+- concrete_pretexts must be plausible and specific
+- defensive_actions must be specific and tied to the actual facts in the evidence, not generic stock advice
+- Do not return JSON
+- Do not return markdown code fences
+- grounded_facts: at most 4 items
+- concrete_pretexts: at most 3 items
+- defensive_actions: at most 3 items
+- summary: 2-3 sentences maximum
+- why_it_matters: 2 sentences maximum
+- why_selected: 2 sentences maximum

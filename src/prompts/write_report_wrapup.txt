@@ -1,0 +1,25 @@
+Write the report rationale and recommended next steps.
+
+Selected attack vectors:
+{{attack_vectors_json}}
+
+Risk signals:
+{{risk_signals_json}}
+
+Return JSON in this exact shape:
+{
+  "rationale": "...",
+  "recommended_next_steps": [
+    "..."
+  ]
+}
+
+Requirements:
+- Use only the provided attack vectors and risk signals
+- rationale must be 1 short paragraph only
+- recommended_next_steps must contain at most 5 items
+- each next step must be one short sentence
+- be specific and action-oriented
+- avoid generic stock recommendations unless the evidence is too weak for specificity
+- if providers, products, roles, workflows, or events are named in the attack vectors, use them
+- do not return markdown
