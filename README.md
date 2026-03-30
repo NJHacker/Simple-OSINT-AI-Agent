@@ -1,4 +1,4 @@
-# Simple_AI_Agent_Demo
+# Simple-OSINT-AI-Agent
 
 A passive OSINT investigation agent powered by the Claude API.
 
@@ -38,7 +38,7 @@ Supported tool categories in the current POC:
 ## Repository Structure
 
 ```text
-Simple_AI_Agent_Demo/
+Simple-OSINT-AI-Agent/
 ├── README.md
 ├── architecture.md
 ├── requirements.txt
