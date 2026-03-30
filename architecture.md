@@ -1,4 +1,4 @@
-# Simple_AI_Agent_Demo — Architecture Document
+# Simple-OSINT-AI-Agent — Architecture Document
 
 ## Page 1 — Current System Design
 
